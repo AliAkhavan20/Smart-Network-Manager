@@ -7,13 +7,21 @@
 
 $userlist = import-csv -Path "I:\pws\My pws\Smart-Network-Manager\Microsoft Scripts\ActiveDirectory\Add Users\users list.csv" -Encoding UTF8
 
+#Make Defult password for users        password is 2times identety code
+$Pass = "AAA" + $User.'user logon name' 
+$SecPass = ConvertTo-SecureString -String $Pass -AsPlainText -Force
+
+
+
 foreach ( $user in $userlist ) {
 
-$Des = # write down your description 
-New-ADOrganizationalUnit -ComputerName $user  -Description $Des -Path "OU=920000,OU=Domain Objects,DC=PowerShell,DC=Local"
-Invoke-Command -ComputerName 'dc' -ScriptBlock { ipconfig }
-
+    $Des = # write down your description 
+    New-ADUser -DisplayName $user.'Display name' -SamAccountName $user.'user logon name' -UserPrincipalName $User.'user logon name'  -PasswordNeverExpires -AccountPassword    -Description $Des -Path "OU=920000,OU=Domain Objects,DC=PowerShell,DC=Local"
+    
+    Invoke-Command -ComputerName 'dc' -ScriptBlock { ipconfig }
+    
 
 }
+
 
 
