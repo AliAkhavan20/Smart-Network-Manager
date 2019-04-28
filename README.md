@@ -1,4 +1,4 @@
-# our-Script
+# Smart-Netwok-Managing
 Hello
 
 this repository has been made for network administrators 
