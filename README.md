@@ -6,7 +6,7 @@
                         
                   this repository has been made for network administrators.
                   
-                  
+               
                   
                     Every Day write 1 Motivational Sentense Over Here:
                     
