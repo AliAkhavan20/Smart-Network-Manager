@@ -32,6 +32,3 @@ $SecPass = ConvertTo-SecureString -String $Pass -AsPlainText -Force
     Invoke-Command -ComputerName 'dc' -ScriptBlock { ipconfig }
 
 }
-
-
-
